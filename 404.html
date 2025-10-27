@@ -65,6 +65,17 @@
   }
 })();
 </script>
+	  <script>
+  // Redireciona qualquer rota inválida para a raiz
+  var redirect = '/2dmchain/';
+  var pathname = window.location.pathname;
+
+  if (pathname !== redirect) {
+    // Mantém a rota como hash (útil para React Router)
+    var newUrl = redirect + '#!' + pathname;
+    window.location.replace(newUrl);
+  }
+</script>
     <div id="root"></div>
     
   </body>
